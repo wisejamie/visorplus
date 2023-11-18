@@ -97,7 +97,41 @@ def get_last_name_advisee():
     else:
         return jsonify({'error': 'Invalid request'}), 400  # Bad request status
 
+@app.rout('advisee/add_user,', methods=['POST'])
+def add_advisee():
+    data = request.json
+    degreeAdvisees = data['degreeAdvisees']
+    majorAdvisees = data['majorAdvisees']
+    interest1Advisees = data['interest1Advisees']
+    interest2Advisees = data['interest2Advisees']
+    interest3Advisees = data['interest3Advisees']
+    bioAdvisees = data['bioAdvises']
+    firstNameAdvisees = data['firstNameAdvisees']
+    lastNameAdvisees = data['lastNameAdvisees']
+    emailAdvisees = data['emailAdvisees']
+    passwordAdvisees = data['passwordAdvisees']
+    schoolAdvisees = data['schoolAdvisees']
+    to_add = (degreeAdvisees, majorAdvisees, interest1Advisees, interest2Advisees, interest3Advisees,\
+              bioAdvisees, firstNameAdvisees,  lastNameAdvisees, emailAdvisees, passwordAdvisees, schoolAdvisees)
+    putRowsAdvisees(to_add)
 
+@app.rout('advisor/add_user,', methods=['POST'])
+def add_advisee():
+    data = request.json
+    departmentAdvisors = data['departmentAdvisors']
+    interest1Advisors = data['interest1Advisors']
+    interest2Advisors = data['interest2Advisors']
+    interest3Advisors = data['interest3Advisors']
+    openToAdvisors = data['openToAdvisors']
+    bioAdvisors = data['bioAdvisors']
+    firstNameAdvisors = data['firstNameAdvisors']
+    firstNameAdvisors = data['lastNameAdvisors']
+    emailAdvisors = data['emailAdvisors']
+    passwordAdvisors = data['passwordAdvisors']
+    schoolAdvisors = data['schoolAdvisors']
+    to_add = (departmentAdvisors, interest1Advisors, interest2Advisors, interest3Advisors, openToAdvisors,\
+            bioAdvisors,   firstNameAdvisors, firstNameAdvisors, emailAdvisors,passwordAdvisors, schoolAdvisors )
+    putRowsAdvisors(to_add)
 
 
 if __name__ == '__main__':
