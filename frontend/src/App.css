@@ -7,7 +7,6 @@
 
 .home,
 .profile,
-.explore,
 .connections,
 .sign-up {
   display: flex;
@@ -15,41 +14,6 @@
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-}
-
-.profile {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f4f4f4;
-}
-.explore {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f4f4f4;
-}
-
-.connections {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f4f4f4;
-}
-
-.sign-up {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f4f4f4;
 }
 
 label {
