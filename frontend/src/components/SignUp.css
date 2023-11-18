@@ -5,11 +5,26 @@
   height: 100vh;
 }
 
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40%;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #3c84c3;
+}
+
 .signup-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 40%;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
 }
 
 .signup-box {
@@ -19,7 +34,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
 .box-content {
