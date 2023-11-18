@@ -7,6 +7,8 @@ import Profile from "./components/pages/Profile";
 import Explore from "./components/pages/Explore";
 import Connections from "./components/pages/Connections";
 import SignUp from "./components/pages/SignUp";
+import StudentSignup from "./components/pages/StudentSignUp";
+import AdvisorSignup from "./components/pages/AdvisorSignUp";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/explore" element={<Explore />} />
           <Route path="/connections" element={<Connections />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/student-signup" element={<StudentSignup />} />
+          <Route path="/advisor-signup" element={<AdvisorSignup />} />
         </Routes>
       </Router>
     </>
