@@ -31,4 +31,4 @@ def findCharacteristic(characteristic, type, selection):
     return flatten_names(get("SELECT id" + type + " FROM " + type + " WHERE " + characteristic + type + " = \"" + selection + "\";"))
 
 
-#print(getAttribute("openToAdvisors", "Advisors", 1))
+print(getAttribute("openToAdvisors", "Advisors", 1))
