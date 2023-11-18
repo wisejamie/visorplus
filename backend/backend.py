@@ -17,7 +17,7 @@ def get_data():
     # Return the result as JSON
     return jsonify(result)
 
-@app.rout('/advisee/getDegree', methods=['POST'])
+@app.route('/advisee/getDegree', methods=['POST'])
 def get_degree_advisee():
     data = request.json
     if 'email' in data:
@@ -27,7 +27,7 @@ def get_degree_advisee():
     else:
         return jsonify({'error': 'Invalid request'}), 400  # Bad request status
     
-@app.rout('/advisee/getMajor', methods=['POST'])
+@app.route('/advisee/getMajor', methods=['POST'])
 def get_major_advisee():
     data = request.json
     if 'email' in data:
@@ -37,7 +37,7 @@ def get_major_advisee():
     else:
         return jsonify({'error': 'Invalid request'}), 400  # Bad request status
     
-@app.rout('/advisee/interest1', methods=['POST'])
+@app.route('/advisee/interest1', methods=['POST'])
 def get_interest1_advisee():
     data = request.json
     if 'email' in data:
@@ -47,7 +47,7 @@ def get_interest1_advisee():
     else:
         return jsonify({'error': 'Invalid request'}), 400  # Bad request status
 
-@app.rout('/advisee/interest2', methods=['POST'])
+@app.route('/advisee/interest2', methods=['POST'])
 def get_interest2_advisee():
     data = request.json
     if 'email' in data:
@@ -57,7 +57,7 @@ def get_interest2_advisee():
     else:
         return jsonify({'error': 'Invalid request'}), 400  # Bad request status
     
-@app.rout('/advisee/interest3', methods=['POST'])
+@app.route('/advisee/interest3', methods=['POST'])
 def get_interest3_advisee():
     data = request.json
     if 'email' in data:
@@ -67,7 +67,7 @@ def get_interest3_advisee():
     else:
         return jsonify({'error': 'Invalid request'}), 400  # Bad request status
     
-@app.rout('/advisee/bio', methods=['POST'])
+@app.route('/advisee/bio', methods=['POST'])
 def get_bio_advisee():
     data = request.json
     if 'email' in data:
@@ -77,7 +77,7 @@ def get_bio_advisee():
     else:
         return jsonify({'error': 'Invalid request'}), 400  # Bad request status
     
-@app.rout('/advisee/first_name', methods=['POST'])
+@app.route('/advisee/first_name', methods=['POST'])
 def get_first_name_advisee():
     data = request.json
     if 'email' in data:
@@ -87,7 +87,7 @@ def get_first_name_advisee():
     else:
         return jsonify({'error': 'Invalid request'}), 400  # Bad request status
     
-@app.rout('/advisee/last_name', methods=['POST'])
+@app.route('/advisee/last_name', methods=['POST'])
 def get_last_name_advisee():
     data = request.json
     if 'email' in data:
@@ -97,7 +97,7 @@ def get_last_name_advisee():
     else:
         return jsonify({'error': 'Invalid request'}), 400  # Bad request status
 
-@app.rout('advisee/add_user,', methods=['POST'])
+@app.route('/advisee/add_user,', methods=['POST'])
 def add_advisee():
     data = request.json
     degreeAdvisees = data['degreeAdvisees']
@@ -115,8 +115,8 @@ def add_advisee():
               bioAdvisees, firstNameAdvisees,  lastNameAdvisees, emailAdvisees, passwordAdvisees, schoolAdvisees)
     putRowsAdvisees(to_add)
 
-@app.rout('advisor/add_user,', methods=['POST'])
-def add_advisee():
+@app.route('/advisor/add_user,', methods=['POST'])
+def add_advisor():
     data = request.json
     departmentAdvisors = data['departmentAdvisors']
     interest1Advisors = data['interest1Advisors']
