@@ -5,6 +5,7 @@ import "../SignUp.css"; // Import your CSS file for styling
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loggedInEmail, setLoggedInEmail] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -20,6 +21,8 @@ const SignUp = () => {
     /* if statement should check if email and password match a email username combo in database */
     if (email && password) {
       /* should actually do something to be on user's account, not just go to explore */
+      setLoggedInEmail(email);
+
       navigate("/explore");
     } else {
       alert("Incorrect username or password.");

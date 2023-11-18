@@ -9,6 +9,9 @@ function Card(props) {
     name,
     researchInterests,
     educationLevel,
+    school,
+    fieldOfStudy,
+    bio,
     onConnect,
   } = props;
 
@@ -26,6 +29,15 @@ function Card(props) {
           </p>
           <p>
             <strong>Education Level:</strong> {educationLevel}
+          </p>
+          <p>
+            <strong>School:</strong> {school}
+          </p>
+          <p>
+            <strong>Field of Study:</strong> {fieldOfStudy}
+          </p>
+          <p>
+            <strong>Bio:</strong> {bio}
           </p>
         </div>
         <button className="connect-button" onClick={onConnect}>
