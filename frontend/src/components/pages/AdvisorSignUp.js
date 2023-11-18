@@ -26,11 +26,13 @@ const AdvisorSignup = () => {
   };
 
   // Additional fields for the second step
-  const [researchInterests, setResearchInterests] = useState("");
-  const [levelOfEducation, setDesiredLevelOfEducation] = useState("");
-  const [skills, setDesiredSkills] = useState("");
-  const [experience, setDesiredExperience] = useState("");
+  const [researchInterest1, setResearchInterest1] = useState("");
+  const [researchInterest2, setResearchInterest2] = useState("");
+  const [researchInterest3, setResearchInterest3] = useState("");
+  const [levelOfEducation, setLevelOfEducation] = useState("");
+  const [school, setSchool] = useState("");
   const [fieldOfResearch, setFieldOfResearch] = useState("");
+  const [bio, setBio] = useState("");
 
   const navigate = useNavigate();
 
@@ -53,19 +55,20 @@ const AdvisorSignup = () => {
       lastName,
       email,
       password,
-      researchInterests,
+      researchInterest1,
+      researchInterest2,
+      researchInterest3,
       levelOfEducation,
-      skills,
-      experience,
+      school,
       fieldOfResearch,
+      bio,
     });
 
     if (
       step === 2 &&
-      researchInterests &&
+      researchInterest1 &&
       levelOfEducation &&
-      skills &&
-      experience &&
+      school &&
       fieldOfResearch
     ) {
       navigate("/explore");
@@ -150,60 +153,84 @@ const AdvisorSignup = () => {
             {/* Research Interests */}
             <div>
               <label>
-                Research Interests:
+                Research Interest #1 *:
                 <input
                   type="text"
-                  value={researchInterests}
-                  onChange={(e) => setResearchInterests(e.target.value)}
+                  value={researchInterest1}
+                  onChange={(e) => setResearchInterest1(e.target.value)}
                   required
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Research Interest #2:
+                <input
+                  type="text"
+                  value={researchInterest2}
+                  onChange={(e) => setResearchInterest2(e.target.value)}
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Research Interest #3:
+                <input
+                  type="text"
+                  value={researchInterest3}
+                  onChange={(e) => setResearchInterest3(e.target.value)}
                 />
               </label>
             </div>
             {/* Level of Education */}
             <div>
               <label>
-                Desired Level of Education:
-                <input
-                  type="text"
+                Desired Level of Education *:
+                <select
                   value={levelOfEducation}
-                  onChange={(e) => setDesiredLevelOfEducation(e.target.value)}
+                  onChange={(e) => setLevelOfEducation(e.target.value)}
                   required
-                />
+                >
+                  <option value="">Select...</option>
+                  <option value="Bachelor's Degree">Bachelor's Degree</option>
+                  <option value="Master's Degree">Master's Degree</option>
+                  <option value="PhD">PhD</option>
+                  <option value="Other">Other</option>
+                </select>
               </label>
             </div>
-            {/* Skills */}
+            {/* School */}
             <div>
               <label>
-                Desired Skills:
+                School *:
                 <input
                   type="text"
-                  value={skills}
-                  onChange={(e) => setDesiredSkills(e.target.value)}
+                  value={school}
+                  onChange={(e) => setSchool(e.target.value)}
                   required
                 />
               </label>
             </div>
-            {/* Experience */}
+            {/* Field of Research */}
             <div>
               <label>
-                Desired Experience:
-                <input
-                  type="text"
-                  value={experience}
-                  onChange={(e) => setDesiredExperience(e.target.value)}
-                  required
-                />
-              </label>
-            </div>
-            {/* Field of Study */}
-            <div>
-              <label>
-                Field of Research:
+                Field of Research *:
                 <input
                   type="text"
                   value={fieldOfResearch}
                   onChange={(e) => setFieldOfResearch(e.target.value)}
                   required
+                />
+              </label>
+            </div>
+            {/* Bio */}
+            <div>
+              <label>
+                Bio:
+                <input
+                  type="text"
+                  value={bio}
+                  onChange={(e) => setBio(e.target.value)}
                 />
               </label>
             </div>
