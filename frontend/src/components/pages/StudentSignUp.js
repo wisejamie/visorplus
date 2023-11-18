@@ -36,13 +36,13 @@ const StudentSignup = () => {
 
   const handleNext = () => {
     // Validate the required fields before proceeding to the next step
-    if (step === 1 && !firstName && !lastName && !email && !password) {
+    if (step === 1 && firstName && lastName && email && password) {
+      // Move to the next step
+      setStep(step + 1);
+    } else {
       alert("Please fill in all required fields.");
       return;
     }
-
-    // Move to the next step
-    setStep(step + 1);
   };
 
   const handleSubmit = () => {
