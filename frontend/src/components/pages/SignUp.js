@@ -29,7 +29,7 @@ const SignUp = () => {
 
   return (
     <div className="supage-container">
-      <div className="signup-container">
+      <div className="login-container">
         <h2>Log In</h2>
         {/* Email */}
         <div>
