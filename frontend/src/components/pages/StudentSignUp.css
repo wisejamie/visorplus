@@ -1,0 +1,47 @@
+.inputStyle:focus {
+    border-color: #4574bf;
+}
+
+.form-box label {
+    display: block;
+    font-size: 15px;
+    margin: 0 0 2vh 0;
+}
+
+.form-box input, .form-box textarea {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+    margin: 0.9vw 0;
+    border: 1;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.form-box textarea {
+    height: 20vh;
+}
+
+.buttonStyle {
+    background-color: #4574bf ;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #4376c7;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
