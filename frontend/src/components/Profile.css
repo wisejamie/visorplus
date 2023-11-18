@@ -1,0 +1,11 @@
+.profile {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 25px;
+}
+.card-container {
+  display: flex;
+  justify-content: center; /* Center the cards horizontally */
+  align-items: flex-start; /* Align the cards at the top */
+  margin-bottom: 15px;
+}

@@ -8,6 +8,8 @@ const AdvisorSignup = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loggedInEmail, setLoggedInEmail] = useState("");
+  const [adviseeOrAdvisor, setAorA] = useState("");
 
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
@@ -71,6 +73,8 @@ const AdvisorSignup = () => {
       school &&
       fieldOfResearch
     ) {
+      setLoggedInEmail(email);
+      setAorA("advisor");
       navigate("/explore");
     } else {
       alert("Please fill in all required fields.");
