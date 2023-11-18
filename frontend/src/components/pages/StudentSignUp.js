@@ -8,6 +8,7 @@ const StudentSignup = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [profilePicture, setProfilePicture] = useState(null);
   const [loggedInEmail, setLoggedInEmail] = useState("");
   const [adviseeOrAdvisor, setAorA] = useState("");
 
@@ -25,6 +26,11 @@ const StudentSignup = () => {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+  };
+
+  const handleProfilePictureChange = (e) => {
+    // Update the profile picture state when a file is selected
+    setProfilePicture(e.target.files[0]);
   };
 
   // Additional fields for the second step
@@ -137,6 +143,17 @@ const StudentSignup = () => {
                   onChange={handlePasswordChange}
                   className="inputStyle"
                   required
+                />
+              </label>
+            </div>
+            {/* Profile Picture */}
+            <div>
+              <label>
+                Profile Picture:
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleProfilePictureChange}
                 />
               </label>
             </div>
