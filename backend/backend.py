@@ -2,7 +2,9 @@ from flask import Flask, jsonify, request
 from getFromDB import *
 from putToDB import *
 
+from flask_cors import CORS
 app = Flask(__name__)
+cors = CORS(app)
 
 # Example Python function in your backend
 def example_function():
@@ -97,7 +99,7 @@ def get_last_name_advisee():
     else:
         return jsonify({'error': 'Invalid request'}), 400  # Bad request status
 
-@app.route('/advisee/add_user,', methods=['POST'])
+@app.route('/advisee/add_user', methods=['POST'])
 def add_advisee():
     data = request.json
     degreeAdvisees = data['degreeAdvisees']
@@ -105,17 +107,24 @@ def add_advisee():
     interest1Advisees = data['interest1Advisees']
     interest2Advisees = data['interest2Advisees']
     interest3Advisees = data['interest3Advisees']
-    bioAdvisees = data['bioAdvises']
+    bioAdvisees = data['bioAdvisees']
     firstNameAdvisees = data['firstNameAdvisees']
     lastNameAdvisees = data['lastNameAdvisees']
     emailAdvisees = data['emailAdvisees']
     passwordAdvisees = data['passwordAdvisees']
     schoolAdvisees = data['schoolAdvisees']
+
     to_add = (degreeAdvisees, majorAdvisees, interest1Advisees, interest2Advisees, interest3Advisees,\
               bioAdvisees, firstNameAdvisees,  lastNameAdvisees, emailAdvisees, passwordAdvisees, schoolAdvisees)
+    
+
     putRowsAdvisees(to_add)
 
-@app.route('/advisor/add_user,', methods=['POST'])
+    return jsonify({"success": "Added succesfully"})
+
+
+
+@app.route('/advisor/add_user', methods=['POST'])
 def add_advisor():
     data = request.json
     departmentAdvisors = data['departmentAdvisors']

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 import "../SignUp.css";
 
 const StudentSignup = () => {
@@ -55,23 +55,7 @@ const StudentSignup = () => {
     }
   };
 
-  const handleSubmit = () => {
-    // Perform form submission logic here
-    console.log("Form submitted!");
-    console.log({
-      firstName,
-      lastName,
-      email,
-      password,
-      researchInterest1,
-      researchInterest2,
-      researchInterest3,
-      levelOfEducation,
-      school,
-      fieldOfStudy,
-      bio,
-    });
-
+  const handleSubmit = async () => {
     if (
       step === 2 &&
       researchInterest1 &&
@@ -79,6 +63,51 @@ const StudentSignup = () => {
       school &&
       fieldOfStudy
     ) {
+      const postData = {
+        firstNameAdvisees: firstName,
+        lastNameAdvisees: lastName,
+        emailAdvisees: email,
+        passwordAdvisees: password,
+        interest1Advisees: researchInterest1,
+        interest2Advisees: researchInterest2,
+        interest3Advisees: researchInterest3,
+        degreeAdvisees: levelOfEducation,
+        schoolAdvisees: school,
+        majorAdvisees: fieldOfStudy,
+        bioAdvisees: bio,
+      };
+
+      fetch("http://127.0.0.1:5000/advisee/add_user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(postData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Handle the response from the server
+          console.log("Server response:", data);
+          // Redirect or perform additional actions as needed
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+
+      // Perform form submission logic here
+      console.log("Form submitted!");
+      console.log({
+        firstName,
+        lastName,
+        email,
+        password,
+        researchInterest1,
+        researchInterest2,
+        researchInterest3,
+        levelOfEducation,
+        school,
+        fieldOfStudy,
+        bio,
+        profilePicture,
+      });
       setLoggedInEmail(email);
       setAorA("advisee");
       navigate("/explore");

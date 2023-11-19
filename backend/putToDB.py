@@ -1,9 +1,9 @@
 import mysql.connector
 
-host = '127.0.0.1'
+host = '10.121.205.163'
 database = 'sys'
-user = 'root'
-password = 'Cslsg326$MYSQL'
+user = 'JamieWise'
+password = 'GoJamie123'
 
 def put(string):
     conn = mysql.connector.connect(host=host, database=database, user=user, password=password)
@@ -16,7 +16,7 @@ def put(string):
 def putRowsAdvisees(new_data):
     insert_query = "INSERT INTO Advisees (degreeAdvisees, majorAdvisees,\
           interest1Advisees,interest2Advisees, interest3Advisees, bioAdvisees,\
-            firstNameAdvisees, lastNameAdvisees) VALUES " + str(new_data) + ";"
+            firstNameAdvisees, lastNameAdvisees, emailAdvisees, passwordAdvisees, schoolAdvisees) VALUES " + str(new_data) + ";"
     put(insert_query)
 
 def putRowsAdvisors(new_data):
