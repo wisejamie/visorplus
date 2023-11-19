@@ -16,12 +16,12 @@ def put(string):
 def putRowsAdvisees(new_data):
     insert_query = "INSERT INTO Advisees (degreeAdvisees, majorAdvisees,\
           interest1Advisees,interest2Advisees, interest3Advisees, bioAdvisees,\
-            firstNameAdvisees, lastNameAdvisees, emailAdvisees, passwordAdvisees, schoolAdvisees) VALUES " + str(new_data) + ";"
+            firstNameAdvisees, lastNameAdvisees, emailAdvisees, passwordAdvisees, schoolAdvisees, picAdvisees) VALUES " + str(new_data) + ";"
     put(insert_query)
 
 def putRowsAdvisors(new_data):
     insert_query = "INSERT INTO Advisors (departmentAdvisors,interest1Advisors,interest2Advisors,\
-        interest3Advisors, openToAdvisors, bioAdvisors, firstNameAdvisors, lastNameAdvisors) VALUES " + str(new_data) + ";"
+        interest3Advisors, openToAdvisors, bioAdvisors, firstNameAdvisors, lastNameAdvisors, picAdvisors) VALUES " + str(new_data) + ";"
     put(insert_query)
 
 
