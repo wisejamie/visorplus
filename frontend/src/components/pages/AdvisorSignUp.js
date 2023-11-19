@@ -87,11 +87,26 @@ const AdvisorSignup = () => {
         interest1Advisors: researchInterest1,
         interest2Advisors: researchInterest2,
         interest3Advisors: researchInterest3,
-        degreeAdvisors: levelOfEducation,
+        openToAdvisors: levelOfEducation,
         schoolAdvisors: school,
-        majorAdvisors: fieldOfResearch,
+        departmentAdvisors: fieldOfResearch,
         bioAdvisors: bio,
       };
+
+      fetch("http://127.0.0.1:5000/advisor/add_user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(postData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Handle the response from the server
+          console.log("Server response:", data);
+          // Redirect or perform additional actions as needed
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
 
       setLoggedInEmail(email);
       setAorA("advisor");
