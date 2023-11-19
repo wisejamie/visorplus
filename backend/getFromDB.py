@@ -1,10 +1,10 @@
 
 import mysql.connector
 
-host = '127.0.0.1'
+host = '10.121.205.163'
 database = 'sys'
-user = 'root'
-password = 'Cslsg326$MYSQL'
+user = 'JamieWise' 
+password = 'GoJamie123'
 
 #Advisees:
 
@@ -31,4 +31,3 @@ def findCharacteristic(characteristic, type, selection):
     return flatten_names(get("SELECT id" + type + " FROM " + type + " WHERE " + characteristic + type + " = \"" + selection + "\";"))
 
 
-print(getAttribute("openToAdvisors", "Advisors", 1))

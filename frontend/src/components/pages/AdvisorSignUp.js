@@ -79,6 +79,20 @@ const AdvisorSignup = () => {
       school &&
       fieldOfResearch
     ) {
+      const postData = {
+        firstNameAdvisors: firstName,
+        lastNameAdvisors: lastName,
+        emailAdvisors: email,
+        passwordAdvisors: password,
+        interest1Advisors: researchInterest1,
+        interest2Advisors: researchInterest2,
+        interest3Advisors: researchInterest3,
+        degreeAdvisors: levelOfEducation,
+        schoolAdvisors: school,
+        majorAdvisors: fieldOfResearch,
+        bioAdvisors: bio,
+      };
+
       setLoggedInEmail(email);
       setAorA("advisor");
       navigate("/explore");
@@ -206,7 +220,7 @@ const AdvisorSignup = () => {
             {/* Level of Education */}
             <div>
               <label>
-                Desired Level of Education *:
+                Minimum Desired Level of Education *:
                 <select
                   value={levelOfEducation}
                   onChange={(e) => setLevelOfEducation(e.target.value)}
