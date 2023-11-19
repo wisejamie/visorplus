@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from getFromDB import *
 from putToDB import *
 
 app = Flask(__name__)
+CORS(app)
 
 # Example Python function in your backend
 def example_function():
@@ -113,9 +115,9 @@ def get_lastname_advisor(user_email):
     return jsonify({'lastNameAdvisors': attribute})
 
 @app.route('/advisee/school/<user_email>', methods=['GET'])
-def get_school_advisee(user_email):
-    attribute = getAttribute("schoolAdvisees", "Advisees", user_email)
-    return jsonify({'schoolAdvisees': attribute})
+def get_school_advisor(user_email):
+    attribute = getAttribute("schoolAdvisors", "Advisors", user_email)
+    return jsonify({'schoolAdvisors': attribute})
 
 @app.route('/advisor/pic/<user_email>', methods=['GET'])
 def get_pic_advisor(user_email):
@@ -123,17 +125,16 @@ def get_pic_advisor(user_email):
     return jsonify({'picAdvisors': attribute})
 
 
-
-
-@app.route('/advisee/add_user,', methods=['POST'])
+@app.route('/advisee/add_user', methods=['POST'])
 def add_advisee():
     data = request.json
+    print(data)
     degreeAdvisees = data['degreeAdvisees']
     majorAdvisees = data['majorAdvisees']
     interest1Advisees = data['interest1Advisees']
     interest2Advisees = data['interest2Advisees']
     interest3Advisees = data['interest3Advisees']
-    bioAdvisees = data['bioAdvises']
+    bioAdvisees = data['bioAdvisees']
     firstNameAdvisees = data['firstNameAdvisees']
     lastNameAdvisees = data['lastNameAdvisees']
     emailAdvisees = data['emailAdvisees']
@@ -142,8 +143,9 @@ def add_advisee():
     to_add = (degreeAdvisees, majorAdvisees, interest1Advisees, interest2Advisees, interest3Advisees,\
               bioAdvisees, firstNameAdvisees,  lastNameAdvisees, emailAdvisees, passwordAdvisees, schoolAdvisees)
     putRowsAdvisees(to_add)
+    return jsonify({"success": "Added succesfully"})
 
-@app.route('/advisor/add_user,', methods=['POST'])
+@app.route('/advisor/add_user', methods=['POST'])
 def add_advisor():
     data = request.json
     departmentAdvisors = data['departmentAdvisors']
@@ -160,7 +162,7 @@ def add_advisor():
     to_add = (departmentAdvisors, interest1Advisors, interest2Advisors, interest3Advisors, openToAdvisors,\
             bioAdvisors,   firstNameAdvisors, lastNameAdvisors, emailAdvisors,passwordAdvisors, schoolAdvisors )
     putRowsAdvisors(to_add)
-
+    return jsonify({"success": "Added succesfully"})
 
 
 if __name__ == '__main__':
