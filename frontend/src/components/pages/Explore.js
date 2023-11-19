@@ -86,10 +86,12 @@ export default function Explore() {
 
   // Function to chunk the array into rows of specified size
   const chunkArray = (array, size) => {
-    return array.reduce(
-      (acc, _, i) => (i % size ? acc : [...acc, array.slice(i, i + size)]),
-      []
-    );
+    return array
+      .slice(0, 12)
+      .reduce(
+        (acc, _, i) => (i % size ? acc : [...acc, array.slice(i, i + size)]),
+        []
+      );
   };
 
   // Organize cards into rows with a maximum of 3 cards per row

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../SignUp.css";
 
-const AdvisorSignup = () => {
+function AdvisorSignup({ onLogin }) {
   const [step, setStep] = useState(1); // Initial step is 1
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -109,6 +109,7 @@ const AdvisorSignup = () => {
         });
 
       setLoggedInEmail(email);
+      onLogin(email);
       setAorA("advisor");
       navigate("/explore");
     } else {
@@ -295,6 +296,6 @@ const AdvisorSignup = () => {
       )}
     </div>
   );
-};
+}
 
 export default AdvisorSignup;
