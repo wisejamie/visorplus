@@ -21,8 +21,8 @@ def get(string):
     conn.close()
     return rows
 
-def getAttribute(column, type, id):
-    return flatten_names(get("SELECT " + column + " FROM `sys`.`" + type + "` WHERE id" + type + " = " + str(id)  + ";"))
+def getAttribute(column, type, email):
+    return flatten_names(get("SELECT " + column + " FROM `sys`.`" + type + "` WHERE email" + type + " = \"" + str(email)  + "\";"))
 
 def getColumn(column, type):
      return flatten_names(get("SELECT " + column + " FROM sys." + type + ";"))
