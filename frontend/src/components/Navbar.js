@@ -3,7 +3,7 @@ import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({ loggedInEmail }) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -44,7 +44,13 @@ function Navbar() {
               <Link
                 to="/profile"
                 className="nav-links"
-                onClick={closeMobileMenu}
+                onClick={() => {
+                  console.log(
+                    "Clicked on Profile link. loggedInEmail:",
+                    loggedInEmail
+                  );
+                  closeMobileMenu();
+                }}
               >
                 Profile
               </Link>

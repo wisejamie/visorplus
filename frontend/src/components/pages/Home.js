@@ -3,7 +3,7 @@ import "../../App.css";
 import HeroSection from "../HeroSection";
 import Footer from "../Footer";
 
-function Home() {
+function Home(user_email) {
   return (
     <>
       <HeroSection />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../SignUp.css"; // Import your CSS file for styling
 
-const SignUp = () => {
+const SignUp = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loggedInEmail, setLoggedInEmail] = useState("");
@@ -22,6 +22,7 @@ const SignUp = () => {
     if (email && password) {
       /* should actually do something to be on user's account, not just go to explore */
       setLoggedInEmail(email);
+      onLogin(email);
 
       navigate("/explore");
     } else {
