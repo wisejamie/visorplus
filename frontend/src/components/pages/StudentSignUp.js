@@ -64,6 +64,8 @@ const StudentSignup = () => {
       fieldOfStudy
     ) {
       const postData = {
+        degreeAdvisees: levelOfEducation,
+        majorAdvisees: fieldOfStudy,
         firstNameAdvisees: firstName,
         lastNameAdvisees: lastName,
         emailAdvisees: email,
@@ -71,9 +73,7 @@ const StudentSignup = () => {
         interest1Advisees: researchInterest1,
         interest2Advisees: researchInterest2,
         interest3Advisees: researchInterest3,
-        degreeAdvisees: levelOfEducation,
         schoolAdvisees: school,
-        majorAdvisees: fieldOfStudy,
         bioAdvisees: bio,
       };
 
