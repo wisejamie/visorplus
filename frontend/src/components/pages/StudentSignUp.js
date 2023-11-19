@@ -79,7 +79,11 @@ function StudentSignup({ onLogin }) {
 
       fetch("http://127.0.0.1:5000/advisee/add_user", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify(postData),
       })
         .then((response) => response.json())
@@ -106,7 +110,6 @@ function StudentSignup({ onLogin }) {
         school,
         fieldOfStudy,
         bio,
-        profilePicture,
       });
       setLoggedInEmail(email);
       onLogin(email);
